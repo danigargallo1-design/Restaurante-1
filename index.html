@@ -67,51 +67,57 @@
     background:#c7473a;
   }
 
-/* HERO */
+/* HERO A PANTALLA COMPLETA */
 .hero{
-  min-height:70vh;
+  height:100vh;
+  width:100%;
   background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('images/upscale1766400855364.jpg') center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("./images/hero.jpg") center / cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
-  max-width:100%;
   margin:0;
   padding:0;
 }
 
+/* CONTENIDO HERO */
+.hero-content{
+  text-align:center;
+  color:#fff;
+  max-width:700px;
+  padding:0 20px;
+}
 
-  .hero-content{
-    text-align:center;
-    color:#fff;
-    max-width:700px;
-    padding:0 20px;
+.hero h2{
+  font-family:'OldEnglish','Times New Roman',serif;
+  font-size:3rem;
+  margin-bottom:14px;
+}
+
+.hero p{
+  font-size:1.15rem;
+  font-weight:500;
+  margin-bottom:24px;
+  color:#f2f2f2;
+}
+
+/* RESTO DE SECCIONES */
+section:not(.hero){
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+/* MÓVIL (IMPORTANTE) */
+@media (max-width:768px){
+  .hero{
+    height:100svh; /* soluciona barras de navegador en Android */
   }
 
   .hero h2{
-    font-family:'OldEnglish','Times New Roman',serif;
-    font-size:3.0rem;
-    margin-bottom:14px;
+    font-size:2.2rem;
   }
-
-  /* MENSAJE PRINCIPAL MÁS CLARO */
-  .hero p{
-    font-size:1.15rem;
-    font-weight:500;
-    margin-bottom:24px;
-    color:#f2f2f2;
-  }
-
-  section{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 20px;
-  }
-.hero{
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
   /* SECCIONES CLARAS */
@@ -392,3 +398,4 @@
 
 </body>
 </html>
+
