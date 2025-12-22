@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World press café | Bar de barrio en el Actur</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  @font-face{
+    font-family:'OldEnglish';
+    src:local('Old English Text MT'),local('OldEnglishTextMT');
+  }
+
+  :root{
+    --bg:#f1efe8;
+    --dark:#1b1b1b;
+    --accent:#b03a2e;
+    --card:#ffffff;
+    --line:#ddd;
+    --text:#222;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+  }
+
+  a{text-decoration:none;color:inherit}
+
+  /* HEADER */
+  header{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:#111;
+    color:#fff;
+    padding:10px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  header h1{
+    font-family:'OldEnglish','Times New Roman',serif;
+    font-size:1.9rem;
+    letter-spacing:1px;
+  }
+
+  /* BOTÓN */
+  .btn-whatsapp{
+    background:var(--accent);
+    padding:10px 22px;
+    border-radius:6px;
+    color:#fff;
+    font-weight:600;
+    font-size:.95rem;
+    transition:background .2s ease;
+  }
+
+  .btn-whatsapp:hover{
+    background:#c7473a;
+  }
+
+  /* HERO */
+  .hero{
+    height:580px;
+    background:
+      linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url('file:///C:/Users/CHUWI/Downloads/upscale1766400855364.jpg')
+      center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .hero-content{
+    text-align:center;
+    color:#fff;
+    max-width:700px;
+    padding:0 20px;
+  }
+
+  .hero h2{
+    font-family:'OldEnglish','Times New Roman',serif;
+    font-size:3.0rem;
+    margin-bottom:14px;
+  }
+
+  /* MENSAJE PRINCIPAL MÁS CLARO */
+  .hero p{
+    font-size:1.15rem;
+    font-weight:500;
+    margin-bottom:24px;
+    color:#f2f2f2;
+  }
+
+  section{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+  }
+
+  /* SECCIONES CLARAS */
+  .section-title{
+    text-align:center;
+    font-size:1.9rem;
+    margin-bottom:36px;
+    font-weight:700;
+    letter-spacing:.5px;
+  }
+
+  /* DESTACADOS */
+  .menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+  }
+
+  .menu-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:26px;
+    text-align:center;
+    border-radius:4px;
+  }
+
+  .menu-card h4{
+    margin-bottom:8px;
+    font-size:1.15rem;
+  }
+
+  /* PRECIOS MÁS VISIBLES */
+  .menu-card span{
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--accent);
+  }
+
+  /* CARTA */
+  .carta{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+  }
+
+  .carta-grupo{
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:28px;
+    border-radius:4px;
+  }
+
+  .carta-grupo h4{
+    font-size:1.25rem;
+    margin-bottom:16px;
+    border-bottom:2px solid var(--accent);
+    display:inline-block;
+    padding-bottom:6px;
+  }
+
+  .carta-item{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    font-size:1.05rem;
+  }
+
+  .carta-item span{
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--accent);
+  }
+
+  /* GALERÍA */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+
+.gallery img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border:1px solid var(--line);
+}
+
+
+
+
+
+
+  /* MAPA */
+  .map iframe{
+    width:100%;
+    height:340px;
+    border:2px solid var(--line);
+  }
+
+  /* CONTACTO */
+  .contact{
+    text-align:center;
+    font-size:1.05rem;
+  }
+
+  .contact a{
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  footer{
+    background:#111;
+    color:#ccc;
+    text-align:center;
+    padding:26px;
+    font-size:.85rem;
+  }
+
+  /* ANIMACIONES SUAVES */
+  .reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+
+  .reveal.active{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media(max-width:768px){
+    .hero h2{font-size:2.1rem}
+    section{padding:55px 18px}
+  }
+/* HERO A ANCHO COMPLETO (SIN DESCUADRES) */
+.hero{
+  max-width:none;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+.hero-content{
+  padding:0 20px;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<header>
+  <h1>World press café</h1>
+  <a class="btn-whatsapp" href="https://wa.me/34643613245" target="_blank">Reservar</a>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>World press café</h2>
+    <p>Un bar de barrio para tomar algo tranquilo y sentirse como en casa</p>
+    <a class="btn-whatsapp" id="btnReservar">Reservar mesa</a>
+  </div>
+</section>
+
+<section class="reveal">
+  <h3 class="section-title reveal">Lo que más se pide</h3>
+  <div class="menu">
+    <div class="menu-card reveal">
+      <h4>Tapa de Jamón</h4>
+      <span>2,50€</span>
+    </div>
+    <div class="menu-card reveal">
+      <h4>Montadito de Queso</h4>
+      <span>2,00€</span>
+    </div>
+    <div class="menu-card reveal">
+      <h4>Cerveza bien fría</h4>
+      <span>3,50€</span>
+    </div>
+  </div>
+</section>
+<section class="reveal">
+  <h3 class="section-title reveal">Nuestra carta</h3>
+
+  <div class="carta">
+    <div class="carta-grupo reveal">
+      <h4>Tapas</h4>
+      <div class="carta-item">Patatas bravas <span>3,50€</span></div>
+      <div class="carta-item">Jamón serrano <span>2,50€</span></div>
+      <div class="carta-item">Queso curado <span>2,50€</span></div>
+      <div class="carta-item">Croquetas caseras <span>3,00€</span></div>
+    </div>
+
+    <div class="carta-grupo reveal">
+      <h4>Bocadillos</h4>
+      <div class="carta-item">Jamón <span>4,00€</span></div>
+      <div class="carta-item">Lomo con queso <span>4,50€</span></div>
+      <div class="carta-item">Tortilla española <span>4,00€</span></div>
+      <div class="carta-item">Calamares <span>5,00€</span></div>
+    </div>
+
+    <div class="carta-grupo reveal">
+      <h4>Bebidas</h4>
+      <div class="carta-item">Cerveza caña <span>2,00€</span></div>
+      <div class="carta-item">Cerveza tercio <span>3,00€</span></div>
+      <div class="carta-item">Vino tinto <span>2,00€</span></div>
+      <div class="carta-item">Refresco <span>2,20€</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h3 class="section-title reveal">Ambiente</h3>
+  <div class="gallery">
+    <img class="reveal" src="file:///C:/Users/CHUWI/Downloads/upscale1766401097593.jpg">
+    <img class="reveal" src="https://s3-media0.fl.yelpcdn.com/bphoto/EsgkueB-pVh0av1LhltArQ/1000s.jpg">
+    <img class="reveal" src="file:///C:/Users/CHUWI/Downloads/wor.png">
+  </div>
+</section>
+
+<section class="reveal">
+  <h3 class="section-title reveal">Dónde estamos</h3>
+  <div class="map">
+   <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d442.9799291146958!2d-0.8853516601518636!3d41.67730292546698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914a0034da7f1%3A0x1506f6e10ce6e01b!2sWorld%20Press%20Caf%C3%A9!5e0!3m2!1ses!2ses!4v1766402289059!5m2!1ses!2ses"
+  width="100%"
+  height="340"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  </div>
+</section>
+
+<section class="contact reveal">
+  <h3 class="section-title reveal">Contacto</h3>
+  <p class="reveal">Teléfono: <a href="tel:+34643613245">+34 643 61 32 45</a></p>
+  <p class="reveal">WhatsApp: <a href="https://wa.me/34643613245" target="_blank">Escríbenos</a></p>
+</section>
+
+<footer>
+  © 2025 WORLD PRESS CAFÉ
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.015}s`;
+    observer.observe(el);
+  });
+
+  document.getElementById('btnReservar').addEventListener('click', function () {
+    const mensaje = encodeURIComponent(
+      "Hola, me gustaría reservar una mesa en Clemente's Bar."
+    );
+    window.location.href = `https://wa.me/34643613245?text=${mensaje}`;
+  });
+</script>
+
+</body>
+</html>
