@@ -8,66 +8,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-  @font-face{
-    font-family:'OldEnglish';
-    src:local('Old English Text MT'),local('OldEnglishTextMT');
-  }
+/* ================= FUENTES Y VARIABLES ================= */
+@font-face{
+  font-family:'OldEnglish';
+  src:local('Old English Text MT'),local('OldEnglishTextMT');
+}
 
-  :root{
-    --bg:#f1efe8;
-    --dark:#1b1b1b;
-    --accent:#b03a2e;
-    --card:#ffffff;
-    --line:#ddd;
-    --text:#222;
-  }
+:root{
+  --bg:#f1efe8;
+  --dark:#1b1b1b;
+  --accent:#b03a2e;
+  --card:#ffffff;
+  --line:#ddd;
+  --text:#222;
+}
 
-  *{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-  body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.7;
-  }
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
 
-  a{text-decoration:none;color:inherit}
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-  /* HEADER */
-  header{
-    position:sticky;
-    top:0;
-    z-index:20;
-    background:#111;
-    color:#fff;
-    padding:10px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#111;
+  color:#fff;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-  header h1{
-    font-family:'OldEnglish','Times New Roman',serif;
-    font-size:1.9rem;
-    letter-spacing:1px;
-  }
+header h1{
+  font-family:'OldEnglish','Times New Roman',serif;
+  font-size:1.9rem;
+  letter-spacing:1px;
+}
 
-  /* BOTÓN */
-  .btn-whatsapp{
-    background:var(--accent);
-    padding:10px 22px;
-    border-radius:6px;
-    color:#fff;
-    font-weight:600;
-    font-size:.95rem;
-    transition:background .2s ease;
-  }
+/* ================= BOTÓN ================= */
+.btn-whatsapp{
+  background:var(--accent);
+  padding:10px 22px;
+  border-radius:6px;
+  color:#fff;
+  font-weight:600;
+  font-size:.95rem;
+  transition:background .2s ease;
+}
 
-  .btn-whatsapp:hover{
-    background:#c7473a;
-  }
+.btn-whatsapp:hover{
+  background:#c7473a;
+}
 
-/* HERO A PANTALLA COMPLETA */
+/* ================= HERO A PANTALLA COMPLETA ================= */
 .hero{
   height:100vh;
   width:100%;
@@ -102,175 +110,151 @@
   color:#f2f2f2;
 }
 
-/* RESTO DE SECCIONES */
+/* ================= SECCIONES NORMALES ================= */
 section:not(.hero){
   max-width:1100px;
   margin:auto;
   padding:70px 20px;
 }
 
-/* MÓVIL (IMPORTANTE) */
+.section-title{
+  text-align:center;
+  font-size:1.9rem;
+  margin-bottom:36px;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+/* ================= DESTACADOS ================= */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+
+.menu-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:26px;
+  text-align:center;
+  border-radius:4px;
+}
+
+.menu-card h4{
+  margin-bottom:8px;
+  font-size:1.15rem;
+}
+
+.menu-card span{
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--accent);
+}
+
+/* ================= CARTA ================= */
+.carta{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+}
+
+.carta-grupo{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:28px;
+  border-radius:4px;
+}
+
+.carta-grupo h4{
+  font-size:1.25rem;
+  margin-bottom:16px;
+  border-bottom:2px solid var(--accent);
+  display:inline-block;
+  padding-bottom:6px;
+}
+
+.carta-item{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+  font-size:1.05rem;
+}
+
+.carta-item span{
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--accent);
+}
+
+/* ================= GALERÍA ================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border:1px solid var(--line);
+}
+
+/* ================= MAPA ================= */
+.map iframe{
+  width:100%;
+  height:340px;
+  border:2px solid var(--line);
+}
+
+/* ================= CONTACTO ================= */
+.contact{
+  text-align:center;
+  font-size:1.05rem;
+}
+
+.contact a{
+  color:var(--accent);
+  font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:26px;
+  font-size:.85rem;
+}
+
+/* ================= ANIMACIONES ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= MÓVIL / ANDROID ================= */
 @media (max-width:768px){
   .hero{
-    height:100svh; /* soluciona barras de navegador en Android */
+    height:100svh; /* FIX definitivo Android/Xiaomi */
   }
 
   .hero h2{
     font-size:2.2rem;
   }
-}
 
-  /* SECCIONES CLARAS */
-  .section-title{
-    text-align:center;
-    font-size:1.9rem;
-    margin-bottom:36px;
-    font-weight:700;
-    letter-spacing:.5px;
-  }
-
-  /* DESTACADOS */
-  .menu{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:24px;
-  }
-
-  .menu-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:26px;
-    text-align:center;
-    border-radius:4px;
-  }
-
-  .menu-card h4{
-    margin-bottom:8px;
-    font-size:1.15rem;
-  }
-
-  /* PRECIOS MÁS VISIBLES */
-  .menu-card span{
-    font-size:1.15rem;
-    font-weight:700;
-    color:var(--accent);
-  }
-
-  /* CARTA */
-  .carta{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:28px;
-  }
-
-  .carta-grupo{
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:28px;
-    border-radius:4px;
-  }
-
-  .carta-grupo h4{
-    font-size:1.25rem;
-    margin-bottom:16px;
-    border-bottom:2px solid var(--accent);
-    display:inline-block;
-    padding-bottom:6px;
-  }
-
-  .carta-item{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:12px;
-    font-size:1.05rem;
-  }
-
-  .carta-item span{
-    font-size:1.15rem;
-    font-weight:700;
-    color:var(--accent);
-  }
-
-  /* GALERÍA */
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:18px;
-  }
-
-.gallery img{
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  border:1px solid var(--line);
-}
-
-
-
-
-
-
-  /* MAPA */
-  .map iframe{
-    width:100%;
-    height:340px;
-    border:2px solid var(--line);
-  }
-
-  /* CONTACTO */
-  .contact{
-    text-align:center;
-    font-size:1.05rem;
-  }
-
-  .contact a{
-    color:var(--accent);
-    font-weight:700;
-  }
-
-  footer{
-    background:#111;
-    color:#ccc;
-    text-align:center;
-    padding:26px;
-    font-size:.85rem;
-  }
-
-  /* ANIMACIONES SUAVES */
-  .reveal{
-    opacity:0;
-    transform:translateY(30px);
-    transition:opacity .6s ease, transform .6s ease;
-  }
-
-  .reveal.active{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-  @media(max-width:768px){
-    .hero h2{font-size:2.1rem}
-    section{padding:55px 18px}
-  }
-/* HERO A ANCHO COMPLETO (SIN DESCUADRES) */
-.hero{
-  max-width:none;
-  margin:0;
-  padding:0;
-  width:100%;
-}
-.hero-content{
-  padding:0 20px;
-}
-
-@media (max-width: 768px){
-  .hero{
-    min-height: 60vh;
-    background-position: center top;
+  section:not(.hero){
+    padding:55px 18px;
   }
 }
-
 </style>
+
 
 
 </head>
@@ -398,4 +382,3 @@ section:not(.hero){
 
 </body>
 </html>
-
